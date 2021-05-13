@@ -1,0 +1,9 @@
+<h3>Results from checking postcode <%=@postcode %></h3>
+
+<% if @servable %>
+  <div>&check; This postcode is within our service area</div>
+<% else %>
+  <div>&#10008; This postcode is not within our service area</div>
+<% end %>
+
+<%=link_to "Check another postcode", action: :home %>

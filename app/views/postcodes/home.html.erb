@@ -1,1 +1,6 @@
-<h3>Welcome to Postcode Checker</h3>
+<h3>Enter a postcode:</h3>
+
+<%= form_with url: '/postcodes/check', method: :get, local: true do |f| %>
+  <%= f.text_field :postcode, id: :postcode %>
+  <%= f.submit "Check", name: nil %>
+<% end %>
