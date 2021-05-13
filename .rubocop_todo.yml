@@ -62,6 +62,11 @@ Metrics/PerceivedComplexity:
   Max: 9
 
 # Cop supports --auto-correct.
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+# Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
