@@ -4,6 +4,6 @@ class PostcodesController < ActionController::Base
 
   def check
     @postcode = params["postcode"]
-    @servable = true
+    @servable = ServiceArea.servable?(@postcode)
   end
 end

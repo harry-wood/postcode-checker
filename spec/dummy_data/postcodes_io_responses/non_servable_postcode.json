@@ -1,0 +1,42 @@
+{
+  "status": 200,
+  "result": {
+    "postcode": "N19 4BA",
+    "quality": 1,
+    "eastings": 530067,
+    "northings": 187265,
+    "country": "England",
+    "nhs_ha": "London",
+    "longitude": -0.124682,
+    "latitude": 51.569266,
+    "european_electoral_region": "London",
+    "primary_care_trust": "Islington",
+    "region": "London",
+    "lsoa": "Islington 002E",
+    "msoa": "Islington 002",
+    "incode": "4BA",
+    "outcode": "N19",
+    "parliamentary_constituency": "Islington North",
+    "admin_district": "Islington",
+    "parish": "Islington, unparished area",
+    "admin_county": null,
+    "admin_ward": "Hillrise",
+    "ced": null,
+    "ccg": "NHS North Central London",
+    "nuts": "Haringey and Islington",
+    "codes": {
+      "admin_district": "E09000019",
+      "admin_county": "E99999999",
+      "admin_ward": "E05000374",
+      "parish": "E43000209",
+      "parliamentary_constituency": "E14000763",
+      "ccg": "E38000240",
+      "ccg_id": "93C",
+      "ced": "E99999999",
+      "nuts": "UKI43",
+      "lsoa": "E01002760",
+      "msoa": "E02000555",
+      "lau2": "E05000374"
+    }
+  }
+}
