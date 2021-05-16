@@ -5,6 +5,11 @@ RSpec.describe "Postcode checking", type: :feature do
   end
 
   scenario "User enters a valid postcode" do
+    stub_request(:get, "http://postcodes.io/postcodes/SE1%207QD")
+      .to_return(body: File.read(
+        "spec/dummy_data/postcodes_io_responses/servable_postcode.json"
+      ))
+
     visit "/"
     fill_in "postcode", with: "SE1 7QD"
     click_button "Check"
