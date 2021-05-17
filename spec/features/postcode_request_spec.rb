@@ -31,4 +31,12 @@ RSpec.describe "Postcode checking", type: :feature do
 
     expect(page).to have_text("postcode is not within our service area")
   end
+
+  scenario "User enters a postcode from the allowed list" do
+    visit "/"
+    fill_in "postcode", with: "SH24 1AB"
+    click_button "Check"
+
+    expect(page).to have_text("postcode is within our service area")
+  end
 end

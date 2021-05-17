@@ -6,6 +6,8 @@ module ServiceArea
   SERVABLE_LSOA_PREFIXES_FILE = Rails.root.join("config", "servable_lsoa_prefixes.txt")
 
   def servable?(postcode)
+    return true if PostcodeAllowedList.allowed?(postcode)
+
     lsoa = lsoa_for_postcode(postcode)
     return false unless lsoa
 
