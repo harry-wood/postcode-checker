@@ -1,6 +1,10 @@
+<% if flash[:alert] %>
+  <div style="color: red;"><%= flash[:alert] %></div>
+<% end %>
+
 <h3>Enter a postcode:</h3>
 
 <%= form_with url: '/postcodes/check', method: :get, local: true do |f| %>
-  <%= f.text_field :postcode, id: :postcode %>
+  <%= f.text_field :postcode, id: :postcode, value: params["postcode"] %>
   <%= f.submit "Check", name: nil %>
 <% end %>

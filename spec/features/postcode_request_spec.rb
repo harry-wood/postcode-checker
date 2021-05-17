@@ -53,6 +53,14 @@ RSpec.describe "Postcode checking", type: :feature do
     expect(page).to have_text("postcode is within our service area")
   end
 
+  scenario "User enters a badly formatted postcode" do
+    visit "/"
+    fill_in "postcode", with: "X"
+    click_button "Check"
+
+    expect(page).to have_text("Bad postcode format")
+  end
+
   scenario "User enters a postcode but postcodes.io is returning errors" do
     stub_request(:get, "http://postcodes.io/postcodes/SE1%207QD")
       .to_return(status: 500, body: "Postcodes.io is broken!")
