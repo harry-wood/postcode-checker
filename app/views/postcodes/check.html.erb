@@ -3,7 +3,7 @@
 <% if @servable %>
   <div>&check; This postcode is within our service area</div>
 <% else %>
-  <div>&#10008; This postcode is not within our service area</div>
+  <div>&#10008; This postcode is not within our service area <%= @serviceable.nil? ? "(Not found)" : "" %></div>
 <% end %>
 
 <%=link_to "Check another postcode", action: :home %>

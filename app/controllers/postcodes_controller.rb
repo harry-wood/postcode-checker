@@ -5,5 +5,7 @@ class PostcodesController < ActionController::Base
   def check
     @postcode = params["postcode"]
     @servable = ServiceArea.servable?(@postcode)
+  rescue PostcodesIoClient::Error
+    render "service_error"
   end
 end

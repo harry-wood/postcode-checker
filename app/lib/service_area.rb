@@ -9,13 +9,15 @@ module ServiceArea
     return true if PostcodeAllowedList.allowed?(postcode)
 
     lsoa = lsoa_for_postcode(postcode)
-    return false unless lsoa
+    return nil unless lsoa
 
     servable_lsoa_prefixes.map { |prefix| lsoa.starts_with?(prefix) }.any?
   end
 
   def lsoa_for_postcode(postcode)
-    postcodes_io_client.postcode_data(postcode)["lsoa"]
+    postcodes_io_client.postcode_data(postcode).fetch("lsoa")
+  rescue PostcodesIoClient::NotFoundError
+    nil
   end
 
   def postcodes_io_client
